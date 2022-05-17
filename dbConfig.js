@@ -7,10 +7,12 @@ const sqlPassword = process.env.MYSQL_PASSWORD || "";
 const dbName = process.env.MYSQL_DB || "mircobank";
 
 const dbConfig = {
-  host: hostname,
-  user: username,
-  password: sqlPassword,
-  database: dbName,
+  db: {
+    host: hostname,
+    user: username,
+    password: sqlPassword,
+    database: dbName,
+  },
 };
 
 module.exports = dbConfig;
