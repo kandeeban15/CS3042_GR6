@@ -5,7 +5,7 @@ class Account {
   interestRate;
   minimumAmount;
 
-  constructor(accNo, customerNIC, accType, agentID, balance) {
+  constructor(data) {
     this.accNo = accNo;
     this.customerNIC = customerNIC;
     this.agentID = agentID;

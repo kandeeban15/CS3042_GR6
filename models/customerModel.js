@@ -1,10 +1,13 @@
 const mysql = require("mysql2");
 
 class Customer {
+  // pass req.data to the constructor
   constructor(data) {
     this.tableName = "customer";
     this.data = data;
+
     this.validateData();
+
     this.customerID = data.customerID;
     this.password = data.password;
     this.customerNIC = data.customerNIC;
@@ -15,7 +18,7 @@ class Customer {
   }
   validateData() {} // Run a vaidator
 
-  generateAddStatement() {
+  generateInsertStatement() {
     const cols =
       "(`Password`, `CustomerNIC`, `Name`, `ContactNumber`, `Address`, `Birthday`)";
     var statement = `INSERT INTO ${this.tableName} ${cols} VALUES`;
