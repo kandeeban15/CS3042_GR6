@@ -1,5 +1,5 @@
 const mysql = require("mysql2/promise");
-const config = require("../dbConfig");
+const config = require("../../dbConfig");
 
 exports.query = async (sql, params) => {
   const connection = await mysql.createConnection(config.db);

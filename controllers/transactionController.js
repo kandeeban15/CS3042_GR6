@@ -1,4 +1,4 @@
-const db = require("./dbOperations");
+const db = require("../models/supportFunctions/dbOperations");
 
 const tableCols =
   "(TransactionID, AccountNumber, Date, Time, TransactionType, AccountType, TransactionAmount, TransactionCharge)";
@@ -25,7 +25,7 @@ exports.getAllTransactions = async (req, res) => {
     res.status(200).json({
       status: "Success",
       data: {
-        result,
+        transactions: result,
       },
     });
   } catch (err) {
